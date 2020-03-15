@@ -18,6 +18,7 @@ public class MyList {
 		li.square(list);
 		li.bind(list1, list2);
 		li.sort(list);
+		li.squareMerge(list1, list2);
 
 	}
 	
@@ -153,6 +154,24 @@ public class MyList {
 		
 		return list;
 		
+	}
+	
+	public int[] squareMerge(int[] listA, int[] listB)
+	{
+		list = new int[bindedLists.length];
+		for(int i = 0; i < bindedLists.length; i++)
+		{
+			list[i] = bindedLists[i] * bindedLists[i];
+		}
+		Arrays.sort(list);
+		
+		System.out.println("The squared values of listA are: ");
+		for(int i = 0; i < bindedLists.length; i++)
+		{
+			System.out.println(list[i]);
+		}
+		
+		return bindedLists;
 	}
 
 }
