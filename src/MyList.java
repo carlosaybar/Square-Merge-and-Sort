@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -7,6 +8,7 @@ public class MyList {
 	public static int [] list1;
 	public static int [] list2;
 
+	public int[] bindedLists;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -15,6 +17,7 @@ public class MyList {
 		li.listB();
 		li.square(list);
 		li.bind(list1, list2);
+		li.sort(list);
 
 	}
 	
@@ -106,7 +109,7 @@ public class MyList {
 	
 	public int[] bind(int [] listA, int [] listB)
 	{
-		int[] bindedLists;
+
 		bindedLists = new int[list1.length + list2.length];
 		
 		for(int i = 0; i < list1.length; i++)
@@ -136,6 +139,19 @@ public class MyList {
 	
 	public int[] sort(int [] list)
 	{
+		list = new int[bindedLists.length];
+		int currentValue;
+		
+		Arrays.sort(bindedLists);
+
+		System.out.println("sorted list");
+		for(int i = 0; i < bindedLists.length; i++)
+		{
+			System.out.println(bindedLists[i]);
+			
+		}
+		
+		return list;
 		
 	}
 
