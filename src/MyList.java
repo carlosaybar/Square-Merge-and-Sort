@@ -108,12 +108,12 @@ public class MyList {
 	{
 		int[] bindedLists;
 		bindedLists = new int[list1.length + list2.length];
+		
 		for(int i = 0; i < list1.length; i++)
 		{
 			bindedLists[i] = list1[i];
 		}
 		
-		System.out.println(list1.length);
 		
 		for(int x = list1.length; x < bindedLists.length; x++)
 		{
@@ -121,9 +121,8 @@ public class MyList {
 			for(int y = 0; y < list2.length; y++)
 			{
 					bindedLists[x] = list2[y];
-					//y++;
+					x++;
 			}
-
 
 		}
 		System.out.println("binded lists");
