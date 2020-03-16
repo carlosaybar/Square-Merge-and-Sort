@@ -19,9 +19,29 @@ public class MyList implements BasicList {
 		MyList li = new MyList();
 		li.listA();
 		li.listB();
-		li.square(list);
-		li.bind(list1, list2);
+		
+		//prints out listA squared
+		int [] squared = li.square(list);
+		System.out.println("The squared values of listA are: ");
+		for(int i = 0; i < squared.length; i++)
+		{
+			System.out.println(squared[i]);
+		}
+		
+		//prints out listA and listB binded
+		int [] binded = li.bind(list1, list2);
+		System.out.println("binded lists");
+		for (int j = 0; j < binded.length; j++)
+		{
+			System.out.println(binded[j]);
+		}
+		
+		//prints out both list binded and sorted
 		li.sort(list);
+		
+		
+		
+		//prints out both list merged, squared, and sorted in ascending order
 		li.squareMerge(list1, list2);
 
 	}
@@ -90,6 +110,7 @@ public class MyList implements BasicList {
 			}catch(NumberFormatException e)
 			{
 				System.out.println("you entered an invalid input or an extra space at index " + x);
+				System.exit(0);
 			}
 			System.out.println(list2[x]);
 			//JOptionPane.showMessageDialog(null, list[x]);
@@ -112,12 +133,7 @@ public class MyList implements BasicList {
 		{
 			list[i] = list1[i] * list1[i];
 		}
-		
-		System.out.println("The squared values of listA are: ");
-		for(int i = 0; i < list.length; i++)
-		{
-			System.out.println(list[i]);
-		}
+
 		
 		return list;
 		
@@ -149,11 +165,6 @@ public class MyList implements BasicList {
 					x++;
 			}
 
-		}
-		System.out.println("binded lists");
-		for (int j = 0; j < bindedLists.length; j++)
-		{
-			System.out.println(bindedLists[j]);
 		}
 		return bindedLists;
 	}
